@@ -18,10 +18,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "babel index.js -d dist",
-    "start:dev": "nodemon --exec babel-node index.js",
-    "clean": "rm -rf build && mkdir build",
-    "start": "npm run build && nodemon index.js"
+ 
   },
   "author": "",
   "license": "ISC",
