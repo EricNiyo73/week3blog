@@ -18,15 +18,14 @@
 <li>Delete Posts</li>
 <li>Testing</li>
 <ul>
-<h6>
-<span>To create a blog <strong>POST  </strong></span><span>http://localhost:5000/api/posts/create</span><br>
-<span>get all blog<strong>GET</strong></span><span>http://localhost:5000/api/posts/create</span><br><br><span>delete account<strong>DELETE</strong></span><span>http://localhost:5000/api/posts/blogId</span><br><br>
-<span>update  <strong>PUT </strong></span><span>http://localhost:5000/api/posts/blogId</span><br><br>
-<span>get one blog <strong>GET  </strong></span><span>http://localhost:5000/api/posts/blogId</span><br><br>
+<span><strong>POST  </strong></span><span>http://localhost:5000/api/posts/create</span><br>
+<span><strong>GET</strong></span><span>http://localhost:5000/api/posts/create</span><br><br><span><strong>DELETE</strong></span><span>http://localhost:5000/api/posts/blogId</span><br><br>
+<span><strong>PUT </strong></span><span>http://localhost:5000/api/posts/blogId</span><br><br>
+<span> <strong>GET  </strong></span><span>http://localhost:5000/api/posts/blogId</span><br><br>
 <span><strong>POST</strong></span><span>http://localhost:5000/api/comment/blogs/blogID/comments</span><br><br>
-<span>signUp  <strong>POST  </strong></span><span>http://localhost:5000/api/auth/register</span><br>
-<span>signUp  <strong>POST </strong></span><span>http://localhost:5000/api/auth/login</span><br><br>
-</h6>
+<span> <strong>POST  </strong></span><span>http://localhost:5000/api/auth/register</span><br>
+<span><strong>POST </strong></span><span>http://localhost:5000/api/auth/login</span><br><br>
+
 <h2>All endpoints are tested<h2>
 <h3>Major Dependencies</h3>
 </ul>
