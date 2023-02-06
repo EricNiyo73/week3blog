@@ -37,15 +37,15 @@ router.post("/register", async (req, res) => {
         }, process.env.JWT_SECRET, {
           expiresIn: process.env.JWT_EXPIRES_IN
         });
-        res.status(201).json({
-          status: 'success',
+        return res.status(201).json({
+          status: 'successfully',
           token,
           data: {
             user: result
           }
         });
       }).catch(error => {
-        res.status(500).json({
+        return res.status(500).json({
           error
         });
       });

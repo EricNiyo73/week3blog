@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
         newUser.save()
         .then(result => {
         const token = jwt.sign({id: result._id}, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
-         res.status(201).json({
+        return res.status(201).json({
         status: 'successfully',
         token,
          data: {
@@ -38,7 +38,7 @@ router.post("/register", async (req, res) => {
         });
         })
         .catch(error => {
-        res.status(500).json({
+        return res.status(500).json({
         error
         });
         });
