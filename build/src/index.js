@@ -11,11 +11,11 @@ var _commentCo = _interopRequireDefault(require("./routes/commentCo.js"));
 var _bodyParser = _interopRequireDefault(require("body-parser"));
 var _path = _interopRequireDefault(require("path"));
 var _middleware = _interopRequireDefault(require("./middlewires/middleware.js"));
-var _databaseConfig = _interopRequireDefault(require("./config/database.config.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const app = (0, _express.default)();
 // import app from express();
 
+// import dbConfig from './config/database.config.js';
 _dotenv.default.config();
 app.use(_express.default.json());
 app.use(_bodyParser.default.urlencoded({
@@ -23,7 +23,7 @@ app.use(_bodyParser.default.urlencoded({
 }));
 app.use(_bodyParser.default.json());
 _mongoose.default.Promise = global.Promise;
-_mongoose.default.connect(_databaseConfig.default.MONGO_URL, {
+_mongoose.default.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -61,3 +61,4 @@ app.use("/api/categories", _categories.default);
 app.listen("5000", () => {
   console.log("Server is listening on port 5000");
 });
+//# sourceMappingURL=index.js.map

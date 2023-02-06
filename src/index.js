@@ -11,7 +11,7 @@ import commentRoute from "./routes/commentCo.js";
 import bodyParser from 'body-parser';
 import path from "path";
 import authorization from "./middlewires/middleware.js";
-import dbConfig from './config/database.config.js';
+// import dbConfig from './config/database.config.js';
 dotenv.config();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 
 mongoose
-  .connect(dbConfig.MONGO_URL, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

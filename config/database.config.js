@@ -1,1 +1,0 @@
-export default {MONGO_URL:"mongodb+srv://Ericn:12345@cluster0.b3fjnbe.mongodb.net/?retryWrites=true&w=majority"};

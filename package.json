@@ -14,14 +14,13 @@
     "path": "^0.12.7"
   },
   "name": "api",
-  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node ./build/app.js",
-    "start:dev": "nodemon --exec babel-node ./app.js",
+    "start": "npm run build && node ./build/src/index.js",
+    "start:dev": "nodemon --exec babel-node ./src/index.js",
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -d ./build ./app.js -s",
+    "build-babel": "babel -d ./build/src/ ./src/ -s",
     "build": "npm run clean && npm run build-babel"
   },
   "author": "",
@@ -30,7 +29,11 @@
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.20.2",
+    "@babel/runtime": "^7.20.13",
     "nodemon": "^2.0.20"
   }
 }
