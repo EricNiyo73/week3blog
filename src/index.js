@@ -19,13 +19,19 @@ app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
 
-mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify:true
-  })
+// mongoose
+//   .connect(process.env.MONGO_URL, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify:true
+//   })
+const connectionString ="mongodb+srv://Ericn:12345@cluster0.b3fjnbe.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(connectionString, { useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify:true,
+  useUnifiedTopology: true
+ })
   .then(() => {
     console.log("Successfully connected to the database");    
 }).catch(err => {

@@ -23,11 +23,20 @@ app.use(_bodyParser.default.urlencoded({
 }));
 app.use(_bodyParser.default.json());
 _mongoose.default.Promise = global.Promise;
-_mongoose.default.connect(process.env.MONGO_URL, {
+
+// mongoose
+//   .connect(process.env.MONGO_URL, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify:true
+//   })
+const connectionString = "mongodb+srv://Ericn:12345@cluster0.b3fjnbe.mongodb.net/?retryWrites=true&w=majority";
+_mongoose.default.connect(connectionString, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindAndModify: true
+  useFindAndModify: true,
+  useUnifiedTopology: true
 }).then(() => {
   console.log("Successfully connected to the database");
 }).catch(err => {
