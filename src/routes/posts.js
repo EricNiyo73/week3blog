@@ -42,7 +42,7 @@ var upload = multer({
     cb(null, true);
   },
 });
-router.post("/create",authentication,upload.single("photo"), async (req, res) => {
+router.post("/create",upload.single("photo"), async (req, res) => {
   try {
     const result = await cloudinary.uploader.upload(req.file.path);
     // console.log(req.body,req.file);
@@ -85,7 +85,7 @@ router.post("/create",authentication,upload.single("photo"), async (req, res) =>
 // });
 
 //UPDATE POST
-router.put("/:id",authentication, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (post.username === req.body.username) {
@@ -110,7 +110,7 @@ router.put("/:id",authentication, async (req, res) => {
 });
 
 //DELETE POST
-router.delete("/:id", authentication,async (req, res) => {
+router.delete("/:id",async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (post.username === req.body.username) {
